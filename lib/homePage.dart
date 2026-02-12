@@ -22,140 +22,147 @@ class HomePageContent extends StatelessWidget {
     final width = size.width;
     final height = size.height;
 
-    return SingleChildScrollView(
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          // Header Section
-          HeaderSection(width: width, height: height),
+    return Column(
+      children: [
+        // Header Section - Fixed at top
+        HeaderSection(width: width, height: height),
 
-          SizedBox(height: height * 0.03),
-
-          // Kategori Section
-          Padding(
-            padding: EdgeInsets.symmetric(horizontal: width * 0.06),
-            child: Text(
-              'Kategori',
-              style: TextStyle(
-                fontSize: width * 0.062,
-                fontWeight: FontWeight.bold,
-                color: Colors.black87,
-              ),
-            ),
-          ),
-
-          SizedBox(height: height * 0.03),
-
-          // Category Chips
-          SizedBox(
-            height: height * 0.055,
-            child: SingleChildScrollView(
-              scrollDirection: Axis.horizontal,
-              padding: EdgeInsets.symmetric(horizontal: width * 0.06),
-              child: Row(
-                children: [
-                  CategoryChip(
-                    imagePath: 'assets/icon/kuliner.png',
-                    label: 'Kuliner',
-                    width: width,
-                  ),
-                  SizedBox(width: width * 0.04),
-                  CategoryChip(
-                    imagePath: 'assets/icon/kerajinan.png',
-                    label: 'Kerajinan',
-                    width: width,
-                  ),
-                  SizedBox(width: width * 0.04),
-                  CategoryChip(
-                    imagePath: 'assets/icon/batik.png',
-                    label: 'Batik',
-                    width: width,
-                  ),
-                ],
-              ),
-            ),
-          ),
-
-          SizedBox(height: height * 0.03),
-
-          // Rekomendasi Section
-          Padding(
-            padding: EdgeInsets.symmetric(horizontal: width * 0.06),
-            child: Text(
-              'Rekomendasi',
-              style: TextStyle(
-                fontSize: width * 0.062,
-                fontWeight: FontWeight.bold,
-                color: Colors.black87,
-              ),
-            ),
-          ),
-
-          SizedBox(height: height * 0.02),
-
-          // Recommendation Cards
-          SizedBox(
-            height: height * 0.37,
-            child: ListView(
-              scrollDirection: Axis.horizontal,
-              padding: EdgeInsets.symmetric(horizontal: width * 0.06),
+        // Scrollable Content
+        Expanded(
+          child: SingleChildScrollView(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                RecommendationCard(
-                  image: 'assets/image/ayamBetutu.png',
-                  title: 'Ayam Betutu',
-                  location: 'Gilimanuk, Bali',
-                  likes: '1,2rb',
+                SizedBox(height: height * 0.03),
+
+                // Kategori Section
+                Padding(
+                  padding: EdgeInsets.symmetric(horizontal: width * 0.06),
+                  child: Text(
+                    'Kategori',
+                    style: TextStyle(
+                      fontSize: width * 0.062,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.black87,
+                    ),
+                  ),
+                ),
+
+                SizedBox(height: height * 0.03),
+
+                // Category Chips
+                SizedBox(
+                  height: height * 0.055,
+                  child: SingleChildScrollView(
+                    scrollDirection: Axis.horizontal,
+                    padding: EdgeInsets.symmetric(horizontal: width * 0.06),
+                    child: Row(
+                      children: [
+                        CategoryChip(
+                          imagePath: 'assets/icon/kuliner.png',
+                          label: 'Kuliner',
+                          width: width,
+                        ),
+                        SizedBox(width: width * 0.04),
+                        CategoryChip(
+                          imagePath: 'assets/icon/kerajinan.png',
+                          label: 'Kerajinan',
+                          width: width,
+                        ),
+                        SizedBox(width: width * 0.04),
+                        CategoryChip(
+                          imagePath: 'assets/icon/batik.png',
+                          label: 'Batik',
+                          width: width,
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+
+                SizedBox(height: height * 0.03),
+
+                // Rekomendasi Section
+                Padding(
+                  padding: EdgeInsets.symmetric(horizontal: width * 0.06),
+                  child: Text(
+                    'Rekomendasi',
+                    style: TextStyle(
+                      fontSize: width * 0.062,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.black87,
+                    ),
+                  ),
+                ),
+
+                SizedBox(height: height * 0.02),
+
+                // Recommendation Cards
+                SizedBox(
+                  height: height * 0.37,
+                  child: ListView(
+                    scrollDirection: Axis.horizontal,
+                    padding: EdgeInsets.symmetric(horizontal: width * 0.06),
+                    children: [
+                      RecommendationCard(
+                        image: 'assets/image/ayamBetutu.png',
+                        title: 'Ayam Betutu',
+                        location: 'Gilimanuk, Bali',
+                        likes: '1,2rb',
+                        width: width,
+                        height: height,
+                      ),
+                      SizedBox(width: width * 0.04),
+                      RecommendationCard(
+                        image: 'assets/image/ikanBakarManokwari.png',
+                        title: 'Ikan Bakar Manokwari',
+                        location: 'Manokwari, Papua Barat',
+                        likes: '',
+                        width: width,
+                        height: height,
+                      ),
+                      SizedBox(width: width * 0.04),
+                    ],
+                  ),
+                ),
+
+                SizedBox(height: height * 0.02),
+
+                // Detail Cards List
+                DetailCard(
+                  image: 'assets/image/topengMalanganBeranda.png',
+                  title: 'Topeng Malangan',
+                  location: 'Malang, Jawa Timur',
                   width: width,
                   height: height,
                 ),
-                SizedBox(width: width * 0.04),
-                RecommendationCard(
-                  image: 'assets/image/ikanBakarManokwari.png',
-                  title: 'Ikan Bakar Manokwari',
-                  location: 'Manokwari, Papua Barat',
-                  likes: '',
+
+                SizedBox(height: height * 0.02),
+
+                DetailCard(
+                  image: 'assets/image/tenunSengkangBeranda.png',
+                  title: 'Tenun Sengkang',
+                  location: 'Sulawesi Selatan',
                   width: width,
                   height: height,
                 ),
-                SizedBox(width: width * 0.04),
+
+                SizedBox(height: height * 0.02),
+
+                DetailCard(
+                  image: 'assets/image/rujakCingurBeranda.png',
+                  title: 'Rujak Cingur',
+                  location: 'Surabaya, Jawa Timur',
+                  width: width,
+                  height: height,
+                ),
+
+                SizedBox(height: height * 0.03),
               ],
             ),
           ),
-
-          SizedBox(height: height * 0.02),
-
-          // Detail Cards List
-          DetailCard(
-            image: 'assets/image/topengMalanganBeranda.png',
-            title: 'Topeng Malangan',
-            location: 'Malang, Jawa Timur',
-            width: width,
-            height: height,
-          ),
-
-          SizedBox(height: height * 0.02),
-
-          DetailCard(
-            image: 'assets/image/tenunSengkangBeranda.png',
-            title: 'Tenun Sengkang',
-            location: 'Sulawesi Selatan',
-            width: width,
-            height: height,
-          ),
-
-          SizedBox(height: height * 0.02),
-
-          DetailCard(
-            image: 'assets/image/rujakCingurBeranda.png',
-            title: 'Rujak Cingur',
-            location: 'Surabaya, Jawa Timur',
-            width: width,
-            height: height,
-          ),
-
-          SizedBox(height: height * 0.03),
-        ],
-      ),
+        ),
+      ],
     );
   }
 }

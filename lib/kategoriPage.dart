@@ -294,32 +294,28 @@ class ProductGrid extends StatelessWidget {
         'image': 'assets/image/ikanBakarManokwari.png',
       },
       {
-        'title': 'Rendang Padang',
-        'location': 'Padang, Sumatera Barat',
+        'title': 'Rujak Cingur',
+        'location': 'Surabaya, Jawa Timur',
         'likes': '1.5rb',
-        'image':
-            'https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?w=400&h=300&fit=crop',
+        'image': 'assets/image/rujakCingur.png',
       },
       {
-        'title': 'Sate Lilit',
-        'location': 'Denpasar, Bali',
+        'title': 'Sop Konro',
+        'location': 'Makassar, Sulawesi Selatan',
         'likes': '980',
-        'image':
-            'https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?w=400&h=300&fit=crop',
+        'image': 'assets/image/sopKonro.png',
       },
       {
-        'title': 'Gudeg Jogja',
-        'location': 'Yogyakarta',
+        'title': 'Soto Banjar',
+        'location': 'Makassar, Sulawesi Selatan',
         'likes': '2.1rb',
-        'image':
-            'https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?w=400&h=300&fit=crop',
+        'image': 'assets/image/sotoBanjar.png',
       },
       {
         'title': 'Pempek Palembang',
         'location': 'Palembang, Sumatera Selatan',
         'likes': '1.8rb',
-        'image':
-            'https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?w=400&h=300&fit=crop',
+        'image': 'assets/image/pempekPalembang.png',
       },
     ];
 
