@@ -183,35 +183,36 @@ class HeaderSection extends StatelessWidget {
         padding: EdgeInsets.symmetric(horizontal: width * 0.06),
         child: Column(
           children: [
-            SizedBox(height: height * 0.025),
+            SizedBox(height: 40),
 
             // Header with logo and avatar
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text(
-                  'NusanTrix',
-                  style: TextStyle(
-                    fontSize: width * 0.072,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.black87,
+            SizedBox(
+              height: 48,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  const Text(
+                    'NusanTrix',
+                    style: TextStyle(
+                      fontSize: 22,
+                      fontWeight: FontWeight.w700,
+                      color: Colors.black,
+                    ),
                   ),
-                ),
-                GestureDetector(
-                  onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => const ProfilePage(),
-                      ),
-                    );
-                  },
-                  child: ClipOval(
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const ProfilePage(),
+                        ),
+                      );
+                    },
                     child: Container(
-                      width: width * 0.14,
-                      height: width * 0.14,
+                      width: 48,
+                      height: 48,
                       decoration: const BoxDecoration(
-                        color: Colors.blue,
+                        shape: BoxShape.circle,
                         image: DecorationImage(
                           image: AssetImage('assets/icon/avatar.png'),
                           fit: BoxFit.cover,
@@ -219,11 +220,11 @@ class HeaderSection extends StatelessWidget {
                       ),
                     ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
 
-            SizedBox(height: height * 0.04),
+            SizedBox(height: height * 0.06),
 
             // Search Bar
             Container(

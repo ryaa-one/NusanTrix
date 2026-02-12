@@ -47,7 +47,7 @@ class _MainNavigationState extends State<MainNavigation> {
           Icon(Icons.home_outlined, size: 30, color: Colors.black),
           Icon(Icons.favorite_border, size: 32, color: Colors.black),
           Icon(Icons.bookmark_border, size: 30, color: Colors.black),
-          Icon(Icons.grid_view_rounded, size: 30, color: Colors.black),
+          Icon(Icons.tune, size: 30, color: Colors.black),
         ],
         onTap: _onNavigationTap,
       ),
