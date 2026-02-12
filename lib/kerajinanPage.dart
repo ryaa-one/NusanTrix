@@ -87,12 +87,23 @@ class _KerajinanPageState extends State<KerajinanPage> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        const Text(
-                          "NusanTrix",
-                          style: TextStyle(
-                            fontSize: 24,
-                            fontWeight: FontWeight.w800,
-                          ),
+                        Row(
+                          children: [
+                            Image.asset(
+                              'assets/icon/logoOri.png',
+                              width: 30,
+                              height: 30,
+                              fit: BoxFit.contain,
+                            ),
+                            const SizedBox(width: 8),
+                            const Text(
+                              "NusanTrix",
+                              style: TextStyle(
+                                fontSize: 24,
+                                fontWeight: FontWeight.w800,
+                              ),
+                            ),
+                          ],
                         ),
 
                         GestureDetector(

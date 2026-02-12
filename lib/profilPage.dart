@@ -40,7 +40,7 @@ class ProfilePage extends StatelessWidget {
                       border: Border.all(color: Colors.blue, width: 3),
                     ),
                     child: const CircleAvatar(
-                      backgroundImage: AssetImage('icon/avatar.png'),
+                      backgroundImage: AssetImage('assets/icon/avatar.png'),
                       backgroundColor: Colors.transparent,
                     ),
                   ),

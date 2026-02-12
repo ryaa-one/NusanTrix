@@ -25,7 +25,7 @@ class FavoritPageContent extends StatelessWidget {
       padding: const EdgeInsets.only(bottom: 100),
       child: Column(
         children: [
-          const SizedBox(height: 40),
+          const SizedBox(height: 48),
 
           // ===== HEADER =====
           Padding(
@@ -35,13 +35,24 @@ class FavoritPageContent extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  const Text(
-                    'NusanTrix',
-                    style: TextStyle(
-                      fontSize: 22,
-                      fontWeight: FontWeight.w700,
-                      color: Colors.black,
-                    ),
+                  Row(
+                    children: [
+                      Image.asset(
+                        'assets/icon/logoOri.png',
+                        width: 28,
+                        height: 28,
+                        fit: BoxFit.contain,
+                      ),
+                      const SizedBox(width: 8),
+                      const Text(
+                        'NusanTrix',
+                        style: TextStyle(
+                          fontSize: 22,
+                          fontWeight: FontWeight.w700,
+                          color: Colors.black,
+                        ),
+                      ),
+                    ],
                   ),
                   GestureDetector(
                     onTap: () {

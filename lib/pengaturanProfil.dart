@@ -64,10 +64,11 @@ class _EditProfilePageState extends State<EditProfilePage> {
                         border: Border.all(color: Colors.blue, width: 3),
                         color: const Color(0xFFE8C4B8),
                       ),
-                      child: const Icon(
-                        Icons.person,
-                        size: 60,
-                        color: Color(0xFFD4A59A),
+                      child: Image.asset(
+                        'assets/icon/avatar.png',
+                        width: 60,
+                        height: 60,
+                        fit: BoxFit.cover,
                       ),
                     ),
                     Positioned(

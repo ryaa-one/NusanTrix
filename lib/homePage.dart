@@ -110,7 +110,7 @@ class HomePageContent extends StatelessWidget {
                 ),
                 SizedBox(width: width * 0.04),
                 RecommendationCard(
-                  image: 'assets/image/ikanBakar.png',
+                  image: 'assets/image/ikanBakarManokwari.png',
                   title: 'Ikan Bakar Manokwari',
                   location: 'Manokwari, Papua Barat',
                   likes: '',
@@ -193,13 +193,24 @@ class HeaderSection extends StatelessWidget {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    const Text(
-                      'NusanTrix',
-                      style: TextStyle(
-                        fontSize: 22,
-                        fontWeight: FontWeight.w700,
-                        color: Colors.black,
-                      ),
+                    Row(
+                      children: [
+                        Image.asset(
+                          'assets/icon/logoOri.png',
+                          width: 28,
+                          height: 28,
+                          fit: BoxFit.contain,
+                        ),
+                        const SizedBox(width: 8),
+                        const Text(
+                          'NusanTrix',
+                          style: TextStyle(
+                            fontSize: 22,
+                            fontWeight: FontWeight.w700,
+                            color: Colors.black,
+                          ),
+                        ),
+                      ],
                     ),
                     GestureDetector(
                       onTap: () {
@@ -394,8 +405,8 @@ class RecommendationCard extends StatelessWidget {
                       width: double.infinity,
                       height: double.infinity,
                       decoration: BoxDecoration(color: Colors.grey[300]),
-                      child: Image.network(
-                        'https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=800',
+                      child: Image.asset(
+                        image,
                         fit: BoxFit.cover,
                         errorBuilder: (context, error, stackTrace) {
                           return Container(
@@ -572,8 +583,8 @@ class DetailCard extends StatelessWidget {
                 child: Container(
                   width: width * 0.38,
                   decoration: BoxDecoration(color: Colors.grey[300]),
-                  child: Image.network(
-                    'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=800',
+                  child: Image.asset(
+                    image,
                     fit: BoxFit.cover,
                     errorBuilder: (context, error, stackTrace) {
                       return Container(

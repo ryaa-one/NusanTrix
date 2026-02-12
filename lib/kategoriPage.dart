@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'profilPage.dart';
+import 'detail.dart';
 
 class KategoriPage extends StatelessWidget {
   const KategoriPage({Key? key}) : super(key: key);
@@ -42,13 +43,10 @@ class KategoriPage extends StatelessWidget {
                   // Category Chips
                   CategoryChips(width: width, height: height),
 
-                  SizedBox(height: height * 0.039),
+                  SizedBox(height: height * 0.041),
 
-                  // Product Grid
-                  SizedBox(
-                    height: height * 0.38,
-                    child: ProductGrid(width: width, height: height),
-                  ),
+                  // Product Grid - UPDATED: 3 rows x 2 cards
+                  ProductGrid(width: width, height: height),
 
                   // Add extra padding at the bottom to account for the main navigation bar
                   SizedBox(height: 80),
@@ -96,13 +94,24 @@ class HeaderSection extends StatelessWidget {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    const Text(
-                      'NusanTrix',
-                      style: TextStyle(
-                        fontSize: 22,
-                        fontWeight: FontWeight.w700,
-                        color: Colors.black,
-                      ),
+                    Row(
+                      children: [
+                        Image.asset(
+                          'assets/icon/logoOri.png',
+                          width: 28,
+                          height: 28,
+                          fit: BoxFit.contain,
+                        ),
+                        const SizedBox(width: 8),
+                        const Text(
+                          'NusanTrix',
+                          style: TextStyle(
+                            fontSize: 22,
+                            fontWeight: FontWeight.w700,
+                            color: Colors.black,
+                          ),
+                        ),
+                      ],
                     ),
                     GestureDetector(
                       onTap: () {
@@ -178,7 +187,7 @@ class HeaderSection extends StatelessWidget {
 // Category Chips Widget
 class CategoryChips extends StatefulWidget {
   final double width;
-  final double height; // Add height parameter to constrain the container
+  final double height;
 
   const CategoryChips({Key? key, required this.width, required this.height})
     : super(key: key);
@@ -199,7 +208,7 @@ class _CategoryChipsState extends State<CategoryChips> {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: widget.height * 0.055, // Match HomePage height constraint
+      height: widget.height * 0.055,
       child: SingleChildScrollView(
         scrollDirection: Axis.horizontal,
         padding: EdgeInsets.symmetric(horizontal: widget.width * 0.06),
@@ -207,9 +216,7 @@ class _CategoryChipsState extends State<CategoryChips> {
           children: List.generate(
             categories.length,
             (index) => Padding(
-              padding: EdgeInsets.only(
-                right: widget.width * 0.04,
-              ), // Match HomePage spacing (0.04)
+              padding: EdgeInsets.only(right: widget.width * 0.04),
               child: GestureDetector(
                 onTap: () {
                   setState(() {
@@ -223,9 +230,7 @@ class _CategoryChipsState extends State<CategoryChips> {
                   ),
                   decoration: BoxDecoration(
                     color: selectedIndex == index
-                        ? const Color(
-                            0xFFFFE4C4,
-                          ) // Match HomePage color for selected
+                        ? const Color(0xFFFFE4C4)
                         : const Color(0xFFFFF0E0),
                     borderRadius: BorderRadius.circular(widget.width * 0.06),
                     boxShadow: [
@@ -249,8 +254,7 @@ class _CategoryChipsState extends State<CategoryChips> {
                         categories[index]['label']!,
                         style: TextStyle(
                           fontSize: widget.width * 0.04,
-                          fontWeight:
-                              FontWeight.w600, // Match HomePage font weight
+                          fontWeight: FontWeight.w600,
                           color: Colors.black87,
                         ),
                       ),
@@ -266,7 +270,7 @@ class _CategoryChipsState extends State<CategoryChips> {
   }
 }
 
-// Product Grid Widget - UPDATED TO MATCH HOMEPAGE LAYOUT
+// Product Grid Widget - 3 ROWS x 2 COLUMNS
 class ProductGrid extends StatelessWidget {
   final double width;
   final double height;
@@ -281,70 +285,142 @@ class ProductGrid extends StatelessWidget {
         'title': 'Ayam Betutu',
         'location': 'Gilimanuk, Bali',
         'likes': '1.2rb',
-        'image':
-            'https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?w=400&h=300&fit=crop',
+        'image': 'assets/image/ayamBetutu.png',
       },
       {
         'title': 'Ikan Bakar Manokwari',
         'location': 'Manokwari, Papua Barat',
         'likes': '1.2rb',
+        'image': 'assets/image/ikanBakarManokwari.png',
+      },
+      {
+        'title': 'Rendang Padang',
+        'location': 'Padang, Sumatera Barat',
+        'likes': '1.5rb',
+        'image':
+            'https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?w=400&h=300&fit=crop',
+      },
+      {
+        'title': 'Sate Lilit',
+        'location': 'Denpasar, Bali',
+        'likes': '980',
         'image':
             'https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?w=400&h=300&fit=crop',
       },
       {
-        'title': 'Ayam Betutu',
-        'location': 'Gilimanuk, Bali',
-        'likes': '1.2rb',
+        'title': 'Gudeg Jogja',
+        'location': 'Yogyakarta',
+        'likes': '2.1rb',
         'image':
             'https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?w=400&h=300&fit=crop',
       },
       {
-        'title': 'Ikan Bakar Manokwari',
-        'location': 'Manokwari, Papua Barat',
-        'likes': '1.2rb',
-        'image':
-            'https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?w=400&h=300&fit=crop',
-      },
-      {
-        'title': 'Ayam Betutu',
-        'location': 'Gilimanuk, Bali',
-        'likes': '1.2rb',
-        'image':
-            'https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?w=400&h=300&fit=crop',
-      },
-      {
-        'title': 'Ikan Bakar Manokwari',
-        'location': 'Manokwari, Papua Barat',
-        'likes': '1.2rb',
+        'title': 'Pempek Palembang',
+        'location': 'Palembang, Sumatera Selatan',
+        'likes': '1.8rb',
         'image':
             'https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?w=400&h=300&fit=crop',
       },
     ];
 
-    return ListView.builder(
-      scrollDirection: Axis.horizontal,
-      padding: EdgeInsets.symmetric(horizontal: width * 0.06),
-      itemCount: products.length,
-      itemBuilder: (context, index) {
-        return Padding(
-          padding: EdgeInsets.only(
-            right: index < products.length - 1 ? width * 0.04 : 0,
+    return Column(
+      children: [
+        // Row 1
+        SizedBox(
+          height: height * 0.38,
+          child: ListView(
+            scrollDirection: Axis.horizontal,
+            padding: EdgeInsets.symmetric(horizontal: width * 0.06),
+            children: [
+              ProductGridCard(
+                title: products[0]['title']!,
+                location: products[0]['location']!,
+                likes: products[0]['likes']!,
+                image: products[0]['image']!,
+                width: width,
+                height: height,
+              ),
+              SizedBox(width: width * 0.04),
+              ProductGridCard(
+                title: products[1]['title']!,
+                location: products[1]['location']!,
+                likes: products[1]['likes']!,
+                image: products[1]['image']!,
+                width: width,
+                height: height,
+              ),
+              SizedBox(width: width * 0.04),
+            ],
           ),
-          child: ProductGridCard(
-            title: products[index]['title']!,
-            location: products[index]['location']!,
-            likes: products[index]['likes']!,
-            image: products[index]['image']!,
-            width: width,
-            height: height,
+        ),
+
+        SizedBox(height: height * 0.02),
+
+        // Row 2
+        SizedBox(
+          height: height * 0.38,
+          child: ListView(
+            scrollDirection: Axis.horizontal,
+            padding: EdgeInsets.symmetric(horizontal: width * 0.06),
+            children: [
+              ProductGridCard(
+                title: products[2]['title']!,
+                location: products[2]['location']!,
+                likes: products[2]['likes']!,
+                image: products[2]['image']!,
+                width: width,
+                height: height,
+              ),
+              SizedBox(width: width * 0.04),
+              ProductGridCard(
+                title: products[3]['title']!,
+                location: products[3]['location']!,
+                likes: products[3]['likes']!,
+                image: products[3]['image']!,
+                width: width,
+                height: height,
+              ),
+              SizedBox(width: width * 0.04),
+            ],
           ),
-        );
-      },
+        ),
+
+        SizedBox(height: height * 0.02),
+
+        // Row 3
+        SizedBox(
+          height: height * 0.38,
+          child: ListView(
+            scrollDirection: Axis.horizontal,
+            padding: EdgeInsets.symmetric(horizontal: width * 0.06),
+            children: [
+              ProductGridCard(
+                title: products[4]['title']!,
+                location: products[4]['location']!,
+                likes: products[4]['likes']!,
+                image: products[4]['image']!,
+                width: width,
+                height: height,
+              ),
+              SizedBox(width: width * 0.04),
+              ProductGridCard(
+                title: products[5]['title']!,
+                location: products[5]['location']!,
+                likes: products[5]['likes']!,
+                image: products[5]['image']!,
+                width: width,
+                height: height,
+              ),
+              SizedBox(width: width * 0.04),
+            ],
+          ),
+        ),
+      ],
     );
   }
 }
 
-// Product Grid Card Widget - UPDATED TO MATCH HOMEPAGE SIZE
+// Product Grid Card Widget - SAMA PERSIS DENGAN HOMEPAGE
 class ProductGridCard extends StatefulWidget {
   final String title;
   final String location;
@@ -372,139 +448,134 @@ class _ProductGridCardState extends State<ProductGridCard> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: widget.width * 0.62, // Sama dengan RecommendationCard di HomePage
-      decoration: BoxDecoration(
-        color: const Color(0xFFFDE4E4),
-        borderRadius: BorderRadius.circular(widget.width * 0.06),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.black.withOpacity(0.08),
-            blurRadius: 8,
-            offset: const Offset(0, 4),
-          ),
-        ],
-      ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          // Image Section (70% dari tinggi card)
-          Expanded(
-            flex: 70,
-            child: Stack(
-              children: [
-                ClipRRect(
-                  borderRadius: BorderRadius.only(
-                    topLeft: Radius.circular(widget.width * 0.06),
-                    topRight: Radius.circular(widget.width * 0.06),
-                  ),
-                  child: Container(
-                    width: double.infinity,
-                    height: double.infinity,
-                    decoration: BoxDecoration(color: Colors.grey[300]),
-                    child: Image.network(
-                      widget.image,
-                      fit: BoxFit.cover,
-                      errorBuilder: (context, error, stackTrace) {
-                        return Container(
-                          color: Colors.grey[300],
-                          child: Icon(
-                            Icons.image,
-                            size: widget.width * 0.15,
-                            color: Colors.grey[400],
-                          ),
-                        );
-                      },
-                    ),
-                  ),
-                ),
-                // Favorite Button
-                Positioned(
-                  top: widget.width * 0.03,
-                  right: widget.width * 0.03,
-                  child: GestureDetector(
-                    onTap: () {
-                      setState(() {
-                        isFavorite = !isFavorite;
-                      });
-                    },
-                    child: Container(
-                      padding: EdgeInsets.all(widget.width * 0.02),
-                      decoration: BoxDecoration(
-                        color: Colors.white,
-                        shape: BoxShape.circle,
-                        boxShadow: [
-                          BoxShadow(
-                            color: Colors.black.withOpacity(0.1),
-                            blurRadius: 4,
-                          ),
-                        ],
-                      ),
-                      child: Icon(
-                        isFavorite ? Icons.favorite : Icons.favorite_border,
-                        size: widget.width * 0.055,
-                        color: isFavorite ? Colors.red[400] : Colors.black87,
-                      ),
-                    ),
-                  ),
-                ),
-              ],
+    return GestureDetector(
+      onTap: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => DetailPageNew(
+              imagePath: widget.image,
+              location: widget.location,
+              seller: 'Warung ${widget.title}',
+              title: widget.title,
+              price: 'Rp 25.000',
+              priceUnit: '/porsi',
+              description:
+                  'Nikmati kelezatan ${widget.title} yang autentik dengan bumbu rempah pilihan. Dimasak dengan resep tradisional yang telah diwariskan turun-temurun, menghadirkan cita rasa khas Indonesia yang menggugah selera.',
             ),
           ),
-
-          // Content Section (30% dari tinggi card)
-          Expanded(
-            flex: 30,
-            child: Padding(
-              padding: EdgeInsets.symmetric(
-                horizontal: widget.width * 0.04,
-                vertical: widget.height * 0.015,
-              ),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        );
+      },
+      child: Container(
+        width: widget.width * 0.62,
+        decoration: BoxDecoration(
+          color: const Color(0xFFFDE4E4),
+          borderRadius: BorderRadius.circular(widget.width * 0.06),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.black.withOpacity(0.08),
+              blurRadius: 8,
+              offset: const Offset(0, 4),
+            ),
+          ],
+        ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            // Image Section (70% dari tinggi card)
+            Expanded(
+              flex: 70,
+              child: Stack(
                 children: [
-                  Expanded(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        Text(
-                          widget.title,
-                          style: TextStyle(
-                            fontSize: widget.width * 0.045,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.black87,
-                          ),
-                          maxLines: 1,
-                          overflow: TextOverflow.ellipsis,
-                        ),
-                        SizedBox(height: widget.height * 0.003),
-                        Text(
-                          widget.location,
-                          style: TextStyle(
-                            fontSize: widget.width * 0.033,
-                            color: Colors.grey[700],
-                          ),
-                          maxLines: 1,
-                          overflow: TextOverflow.ellipsis,
-                        ),
-                      ],
+                  ClipRRect(
+                    borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(widget.width * 0.06),
+                      topRight: Radius.circular(widget.width * 0.06),
+                    ),
+                    child: Container(
+                      width: double.infinity,
+                      height: double.infinity,
+                      decoration: BoxDecoration(color: Colors.grey[300]),
+                      child: Image.asset(
+                        widget.image,
+                        fit: BoxFit.cover,
+                        errorBuilder: (context, error, stackTrace) {
+                          return Container(
+                            color: Colors.grey[300],
+                            child: Icon(
+                              Icons.image,
+                              size: widget.width * 0.15,
+                              color: Colors.grey[400],
+                            ),
+                          );
+                        },
+                      ),
                     ),
                   ),
-                  if (widget.likes.isNotEmpty)
-                    Row(
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        Icon(
-                          Icons.favorite,
-                          size: widget.width * 0.038,
-                          color: Colors.red[400],
+                  // Favorite Button
+                  Positioned(
+                    top: widget.width * 0.03,
+                    right: widget.width * 0.03,
+                    child: GestureDetector(
+                      onTap: () {
+                        setState(() {
+                          isFavorite = !isFavorite;
+                        });
+                      },
+                      child: Container(
+                        padding: EdgeInsets.all(widget.width * 0.02),
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          shape: BoxShape.circle,
+                          boxShadow: [
+                            BoxShadow(
+                              color: Colors.black.withOpacity(0.1),
+                              blurRadius: 4,
+                            ),
+                          ],
                         ),
-                        SizedBox(width: widget.width * 0.012),
-                        Flexible(
-                          child: Text(
-                            widget.likes,
+                        child: Icon(
+                          isFavorite ? Icons.favorite : Icons.favorite_border,
+                          size: widget.width * 0.055,
+                          color: isFavorite ? Colors.red[400] : Colors.black87,
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+
+            // Content Section (30% dari tinggi card)
+            Expanded(
+              flex: 30,
+              child: Padding(
+                padding: EdgeInsets.symmetric(
+                  horizontal: widget.width * 0.04,
+                  vertical: widget.height * 0.015,
+                ),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Expanded(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          Text(
+                            widget.title,
+                            style: TextStyle(
+                              fontSize: widget.width * 0.045,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.black87,
+                            ),
+                            maxLines: 1,
+                            overflow: TextOverflow.ellipsis,
+                          ),
+                          SizedBox(height: widget.height * 0.003),
+                          Text(
+                            widget.location,
                             style: TextStyle(
                               fontSize: widget.width * 0.033,
                               color: Colors.grey[700],
@@ -512,14 +583,38 @@ class _ProductGridCardState extends State<ProductGridCard> {
                             maxLines: 1,
                             overflow: TextOverflow.ellipsis,
                           ),
-                        ),
-                      ],
+                        ],
+                      ),
                     ),
-                ],
+                    if (widget.likes.isNotEmpty)
+                      Row(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          Icon(
+                            Icons.favorite,
+                            size: widget.width * 0.038,
+                            color: Colors.red[400],
+                          ),
+                          SizedBox(width: widget.width * 0.012),
+                          Flexible(
+                            child: Text(
+                              widget.likes,
+                              style: TextStyle(
+                                fontSize: widget.width * 0.033,
+                                color: Colors.grey[700],
+                              ),
+                              maxLines: 1,
+                              overflow: TextOverflow.ellipsis,
+                            ),
+                          ),
+                        ],
+                      ),
+                  ],
+                ),
               ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
