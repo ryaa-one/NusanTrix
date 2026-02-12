@@ -1,6 +1,6 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
-import 'pageDaftar.dart';
+import 'landingPage.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({Key? key}) : super(key: key);
@@ -31,7 +31,7 @@ class _SplashScreenState extends State<SplashScreen>
       if (!mounted) return;
       Navigator.pushReplacement(
         context,
-        MaterialPageRoute(builder: (_) => const DaftarPage()),
+        MaterialPageRoute(builder: (_) => const LandingPage()),
       );
     });
   }
@@ -56,8 +56,8 @@ class _SplashScreenState extends State<SplashScreen>
               children: [
                 Image.asset(
                   'assets/icon/logoOri.png',
-                  width: 180,
-                  height: 180, // 350 terlalu besar, tapi ini opsional
+                  width: 130,
+                  height: 130, // 350 terlalu besar, tapi ini opsional
                   fit: BoxFit.contain,
                 ),
                 const SizedBox(height: 12),

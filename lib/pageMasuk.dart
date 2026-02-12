@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'pageDaftar.dart';
 import 'pageLupaPw.dart';
+import 'mainNavigation.dart';
 
 class MasukPage extends StatefulWidget {
   const MasukPage({Key? key}) : super(key: key);
@@ -243,7 +244,7 @@ class _MasukPageState extends State<MasukPage> {
                                 context,
                                 MaterialPageRoute(
                                   builder: (context) =>
-                                      const DaftarPage(), //GANTI KE HALAMAN BERANDA
+                                      const MainNavigation(), // Navigate to MainNavigation
                                 ),
                               );
                             },

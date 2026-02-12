@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'pageDaftar.dart';
-import 'pageMasuk.dart';
+import 'mainNavigation.dart';
 
 class LandingPage extends StatelessWidget {
   const LandingPage({Key? key}) : super(key: key);
@@ -79,7 +79,7 @@ class LandingPage extends StatelessWidget {
                             const Text(
                               'Masuk dalam mode tamu?  ',
                               style: TextStyle(
-                                fontSize: 8,
+                                fontSize: 15,
                                 fontWeight: FontWeight.w400,
                                 color: Color(0xFF000000),
                                 height: 1.0,
@@ -91,14 +91,14 @@ class LandingPage extends StatelessWidget {
                                   context,
                                   MaterialPageRoute(
                                     builder: (context) =>
-                                        const MasukPage(), //UBAH KE HALAMAN BERANDA
+                                        const MainNavigation(), //UBAH KE HALAMAN BERANDA
                                   ),
                                 );
                               },
                               child: const Text(
                                 'masuk',
                                 style: TextStyle(
-                                  fontSize: 8,
+                                  fontSize: 15,
                                   fontWeight: FontWeight.w600,
                                   color: Color(0xFFD32F2F),
                                   height: 1.0,

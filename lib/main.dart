@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'mainNavigation.dart';
+import 'splashScreen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
         scaffoldBackgroundColor: Colors.white,
       ),
       // PENTING: Gunakan MainNavigation sebagai home, bukan HomePage
-      home: const MainNavigation(),
+      home: const SplashScreen(),
     );
   }
 }

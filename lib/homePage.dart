@@ -44,7 +44,7 @@ class HomePageContent extends StatelessWidget {
             ),
           ),
 
-          SizedBox(height: height * 0.02),
+          SizedBox(height: height * 0.03),
 
           // Category Chips
           SizedBox(
@@ -55,19 +55,19 @@ class HomePageContent extends StatelessWidget {
               child: Row(
                 children: [
                   CategoryChip(
-                    icon: Icons.restaurant,
+                    imagePath: 'assets/icon/kuliner.png',
                     label: 'Kuliner',
                     width: width,
                   ),
                   SizedBox(width: width * 0.04),
                   CategoryChip(
-                    icon: Icons.forest,
+                    imagePath: 'assets/icon/kerajinan.png',
                     label: 'Kerajinan',
                     width: width,
                   ),
                   SizedBox(width: width * 0.04),
                   CategoryChip(
-                    icon: Icons.checkroom,
+                    imagePath: 'assets/icon/batik.png',
                     label: 'Batik',
                     width: width,
                   ),
@@ -101,7 +101,7 @@ class HomePageContent extends StatelessWidget {
               padding: EdgeInsets.symmetric(horizontal: width * 0.06),
               children: [
                 RecommendationCard(
-                  image: 'assets/ayam_betutu.jpg',
+                  image: 'assets/image/ayamBetutu.png',
                   title: 'Ayam Betutu',
                   location: 'Gilimanuk, Bali',
                   likes: '1,2rb',
@@ -110,7 +110,7 @@ class HomePageContent extends StatelessWidget {
                 ),
                 SizedBox(width: width * 0.04),
                 RecommendationCard(
-                  image: 'assets/ikan_bakar.jpg',
+                  image: 'assets/image/ikanBakar.png',
                   title: 'Ikan Bakar Manokwari',
                   location: 'Manokwari, Papua Barat',
                   likes: '',
@@ -126,7 +126,7 @@ class HomePageContent extends StatelessWidget {
 
           // Detail Cards List
           DetailCard(
-            image: 'assets/topeng.jpg',
+            image: 'assets/image/topengMalanganBeranda.png',
             title: 'Topeng Malangan',
             location: 'Malang, Jawa Timur',
             width: width,
@@ -136,7 +136,7 @@ class HomePageContent extends StatelessWidget {
           SizedBox(height: height * 0.02),
 
           DetailCard(
-            image: 'assets/tenun.jpg',
+            image: 'assets/image/tenunSengkangBeranda.png',
             title: 'Tenun Sengkang',
             location: 'Sulawesi Selatan',
             width: width,
@@ -146,7 +146,7 @@ class HomePageContent extends StatelessWidget {
           SizedBox(height: height * 0.02),
 
           DetailCard(
-            image: 'assets/rujak.jpg',
+            image: 'assets/image/rujakCingurBeranda.png',
             title: 'Rujak Cingur',
             location: 'Surabaya, Jawa Timur',
             width: width,
@@ -170,7 +170,6 @@ class HeaderSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: height * 0.28,
       width: width,
       decoration: BoxDecoration(
         color: const Color(0xFFF5B5B5),
@@ -179,88 +178,94 @@ class HeaderSection extends StatelessWidget {
           bottomRight: Radius.circular(width * 0.08),
         ),
       ),
-      child: Padding(
-        padding: EdgeInsets.symmetric(horizontal: width * 0.06),
-        child: Column(
-          children: [
-            SizedBox(height: 40),
+      child: SafeArea(
+        bottom: false,
+        child: Padding(
+          padding: EdgeInsets.symmetric(horizontal: width * 0.06),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              SizedBox(height: height * 0.02),
 
-            // Header with logo and avatar
-            SizedBox(
-              height: 48,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  const Text(
-                    'NusanTrix',
-                    style: TextStyle(
-                      fontSize: 22,
-                      fontWeight: FontWeight.w700,
-                      color: Colors.black,
+              // Header with logo and avatar
+              SizedBox(
+                height: 48,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    const Text(
+                      'NusanTrix',
+                      style: TextStyle(
+                        fontSize: 22,
+                        fontWeight: FontWeight.w700,
+                        color: Colors.black,
+                      ),
                     ),
-                  ),
-                  GestureDetector(
-                    onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => const ProfilePage(),
-                        ),
-                      );
-                    },
-                    child: Container(
-                      width: 48,
-                      height: 48,
-                      decoration: const BoxDecoration(
-                        shape: BoxShape.circle,
-                        image: DecorationImage(
-                          image: AssetImage('assets/icon/avatar.png'),
-                          fit: BoxFit.cover,
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const ProfilePage(),
+                          ),
+                        );
+                      },
+                      child: Container(
+                        width: 48,
+                        height: 48,
+                        decoration: const BoxDecoration(
+                          shape: BoxShape.circle,
+                          image: DecorationImage(
+                            image: AssetImage('assets/icon/avatar.png'),
+                            fit: BoxFit.cover,
+                          ),
                         ),
                       ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
-            ),
 
-            SizedBox(height: height * 0.06),
+              SizedBox(height: height * 0.03),
 
-            // Search Bar
-            Container(
-              height: height * 0.065,
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(height * 0.0325),
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.black.withOpacity(0.05),
-                    blurRadius: 8,
-                    offset: const Offset(0, 2),
-                  ),
-                ],
-              ),
-              child: TextField(
-                decoration: InputDecoration(
-                  hintText: 'Cari kerajinan atau kuliner',
-                  hintStyle: TextStyle(
-                    color: Colors.grey[400],
-                    fontSize: width * 0.04,
-                  ),
-                  prefixIcon: Icon(
-                    Icons.search,
-                    color: Colors.grey[600],
-                    size: width * 0.06,
-                  ),
-                  border: InputBorder.none,
-                  contentPadding: EdgeInsets.symmetric(
-                    horizontal: width * 0.04,
-                    vertical: height * 0.02,
+              // Search Bar
+              Container(
+                height: height * 0.065,
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(height * 0.0325),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.black.withOpacity(0.05),
+                      blurRadius: 8,
+                      offset: const Offset(0, 2),
+                    ),
+                  ],
+                ),
+                child: TextField(
+                  decoration: InputDecoration(
+                    hintText: 'Cari kerajinan atau kuliner',
+                    hintStyle: TextStyle(
+                      color: Colors.grey[400],
+                      fontSize: width * 0.04,
+                    ),
+                    prefixIcon: Icon(
+                      Icons.search,
+                      color: Colors.grey[600],
+                      size: width * 0.06,
+                    ),
+                    border: InputBorder.none,
+                    contentPadding: EdgeInsets.symmetric(
+                      horizontal: width * 0.04,
+                      vertical: height * 0.02,
+                    ),
                   ),
                 ),
               ),
-            ),
-          ],
+
+              SizedBox(height: height * 0.02),
+            ],
+          ),
         ),
       ),
     );
@@ -268,13 +273,13 @@ class HeaderSection extends StatelessWidget {
 }
 
 class CategoryChip extends StatelessWidget {
-  final IconData icon;
+  final String imagePath;
   final String label;
   final double width;
 
   const CategoryChip({
     Key? key,
-    required this.icon,
+    required this.imagePath,
     required this.label,
     required this.width,
   }) : super(key: key);
@@ -300,7 +305,12 @@ class CategoryChip extends StatelessWidget {
       child: Row(
         mainAxisSize: MainAxisSize.min,
         children: [
-          Icon(icon, size: width * 0.055, color: Colors.black87),
+          Image.asset(
+            imagePath,
+            width: width * 0.055,
+            height: width * 0.055,
+            fit: BoxFit.contain,
+          ),
           SizedBox(width: width * 0.02),
           Text(
             label,

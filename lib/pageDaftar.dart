@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'pageMasuk.dart';
-import 'pageSuka.dart';
+import 'mainNavigation.dart';
 
 class DaftarPage extends StatefulWidget {
   const DaftarPage({Key? key}) : super(key: key);
@@ -253,11 +253,11 @@ class _DaftarPageState extends State<DaftarPage> {
                         Center(
                           child: GestureDetector(
                             onTap: () {
-                              Navigator.push(
+                              Navigator.pushReplacement(
                                 context,
                                 MaterialPageRoute(
                                   builder: (context) =>
-                                      const SukaPage(), // GANTI KE HALAMAN BERANDA
+                                      const MainNavigation(), // Navigate to MainNavigation
                                 ),
                               );
                             },

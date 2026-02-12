@@ -20,7 +20,7 @@ class _MainNavigationState extends State<MainNavigation> {
     HomePageContent(),
     SukaPageContent(),
     FavoritPageContent(),
-    KategoriPageContent(),
+    KategoriPage(),
   ];
 
   void _onNavigationTap(int index) {
