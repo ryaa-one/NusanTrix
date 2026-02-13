@@ -62,21 +62,21 @@ class KodeVerifikasiPage extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       _buildCodeBox(context),
-                      const SizedBox(width: 16),
+                      const SizedBox(width: 7),
                       _buildCodeBox(context),
-                      const SizedBox(width: 16),
+                      const SizedBox(width: 7),
                       _buildCodeBox(context),
-                      const SizedBox(width: 16),
+                      const SizedBox(width: 7),
                       _buildCodeBox(context),
-                      const SizedBox(width: 16),
+                      const SizedBox(width: 7),
                       _buildCodeBox(context),
-                      const SizedBox(width: 16),
+                      const SizedBox(width: 7),
                       _buildCodeBox(context),
                     ],
                   ),
                 ),
               ),
-              const SizedBox(height: 80),
+              const SizedBox(height: 50),
               Center(
                 child: GestureDetector(
                   onTap: () {
@@ -88,7 +88,7 @@ class KodeVerifikasiPage extends StatelessWidget {
                     );
                   },
                   child: Container(
-                    width: 400,
+                    width: 200,
                     height: 56,
                     decoration: BoxDecoration(
                       color: const Color(0xFFFF6B6B),

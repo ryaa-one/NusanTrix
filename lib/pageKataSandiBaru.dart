@@ -53,7 +53,7 @@ class _KataSandiBaruPageState extends State<KataSandiBaruPage> {
               const SizedBox(height: 60),
               Center(
                 child: Container(
-                  width: 400,
+                  width: 370,
                   height: 56,
                   decoration: BoxDecoration(
                     color: const Color(0xFFE0E0E0),
@@ -102,7 +102,7 @@ class _KataSandiBaruPageState extends State<KataSandiBaruPage> {
               const SizedBox(height: 20),
               Center(
                 child: Container(
-                  width: 400,
+                  width: 370,
                   height: 56,
                   decoration: BoxDecoration(
                     color: const Color(0xFFE0E0E0),
@@ -148,7 +148,7 @@ class _KataSandiBaruPageState extends State<KataSandiBaruPage> {
                   ),
                 ),
               ),
-              const SizedBox(height: 80),
+              const SizedBox(height: 50),
               Center(
                 child: GestureDetector(
                   onTap: () {
@@ -160,7 +160,7 @@ class _KataSandiBaruPageState extends State<KataSandiBaruPage> {
                     );
                   },
                   child: Container(
-                    width: 400,
+                    width: 200,
                     height: 56,
                     decoration: BoxDecoration(
                       color: const Color(0xFFFF6B6B),

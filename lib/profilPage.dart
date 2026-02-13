@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'pengaturanProfil.dart';
-import 'homePage.dart';
-import 'pageSuka.dart';
-import 'pageFavorit.dart';
+import 'mainNavigation.dart';
 
 class ProfilePage extends StatelessWidget {
   const ProfilePage({super.key});
@@ -172,7 +169,7 @@ class ProfilePage extends StatelessWidget {
                 onPressed: () {
                   Navigator.pushAndRemoveUntil(
                     context,
-                    MaterialPageRoute(builder: (context) => HomePage()),
+                    MaterialPageRoute(builder: (context) => MainNavigation()),
                     (route) => false,
                   );
                 },
@@ -192,36 +189,6 @@ class ProfilePage extends StatelessWidget {
             ),
           ],
         ),
-      ),
-      bottomNavigationBar: CurvedNavigationBar(
-        height: 70,
-        index: 3,
-        backgroundColor: Colors.transparent,
-        color: const Color(0xFFD32F2F),
-        buttonBackgroundColor: const Color(0xFFFFF9C4),
-        animationDuration: const Duration(milliseconds: 350),
-        animationCurve: Curves.easeInOut,
-        items: const [
-          Icon(Icons.home_outlined, size: 32, color: Colors.black),
-          Icon(Icons.favorite_border, size: 36, color: Colors.black),
-          Icon(Icons.bookmark_border, size: 32, color: Colors.black),
-          Icon(Icons.tune, size: 32, color: Colors.black),
-        ],
-        onTap: (index) {
-          if (index == 0) {
-            Navigator.popUntil(context, (route) => route.isFirst);
-          } else if (index == 1) {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => const SukaPage()),
-            );
-          } else if (index == 2) {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => const FavoritPage()),
-            );
-          }
-        },
       ),
     );
   }

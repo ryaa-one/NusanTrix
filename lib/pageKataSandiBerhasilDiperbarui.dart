@@ -62,7 +62,7 @@ class KataSandiBerhasilPage extends StatelessWidget {
                   );
                 },
                 child: Container(
-                  width: 400,
+                  width: 200,
                   height: 56,
                   decoration: BoxDecoration(
                     color: const Color(0xFFFF6B6B),
